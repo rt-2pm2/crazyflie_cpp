@@ -814,17 +814,20 @@ struct crtpExternalPositionUpdate
   crtpExternalPositionUpdate(
     float x,
     float y,
-    float z)
+    float z,
+    float t)
     : header(0x06, 0)
     , x(x)
     , y(y)
     , z(z)
+    , t(t)
   {
   }
   const crtp header;
   float x;
   float y;
   float z;
+  float t;
 }  __attribute__((packed));
 CHECKSIZE(crtpExternalPositionUpdate)
 

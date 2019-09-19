@@ -233,9 +233,10 @@ void Crazyflie::sendFullStateSetpoint(
 void Crazyflie::sendExternalPositionUpdate(
   float x,
   float y,
-  float z)
+  float z,
+  float t)
 {
-  crtpExternalPositionUpdate position(x, y, z);
+  crtpExternalPositionUpdate position(x, y, z, t);
   sendPacket(position);
 }
 

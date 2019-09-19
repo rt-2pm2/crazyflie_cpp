@@ -153,7 +153,8 @@ public:
   void sendExternalPositionUpdate(
     float x,
     float y,
-    float z);
+    float z,
+    float t);
 
   void sendExternalPoseUpdate(
     float x, float y, float z,
@@ -853,6 +854,7 @@ public:
     float x;
     float y;
     float z;
+    float t;
   };
 
   void sendExternalPositions(
