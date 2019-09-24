@@ -10,6 +10,7 @@
 #include <set>
 #include <map>
 #include <chrono>
+#include <iostream>
 
 #define ENABLE_SAFELINK 1
 
@@ -642,6 +643,7 @@ public:
         std::string first = var.substr(0, pos);
         std::string second = var.substr(pos+1);
         const Crazyflie::LogTocEntry* entry = m_cf->getLogTocEntry(first, second);
+        std::cout << "Found " << first << "." << second << " in log toc!\n";
         if (entry) {
           s += Crazyflie::size(entry->type);
           if (s > 26) {
