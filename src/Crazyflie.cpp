@@ -230,6 +230,20 @@ void Crazyflie::sendFullStateSetpoint(
   sendPacket(request);
 }
 
+void Crazyflie::sendExternalDistanceUpdate(
+    float dist,
+    unsigned char id,
+    float x_anchor,
+    float y_anchor,
+    float z_anchor) {
+  crtpExternalDistanceUpdate distance(
+      dist,
+      id,
+      x_anchor, y_anchor, z_anchor);
+
+  sendPacket(distance);
+}
+
 void Crazyflie::sendExternalPositionUpdate(
   float x,
   float y,

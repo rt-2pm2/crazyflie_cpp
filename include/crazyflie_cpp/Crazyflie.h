@@ -151,6 +151,13 @@ public:
     float z,
     float yaw);
 
+  void sendExternalDistanceUpdate(
+    float dist,
+    unsigned char id,
+    float x,
+    float y,
+    float z);
+
   void sendExternalPositionUpdate(
     float x,
     float y,

@@ -828,6 +828,34 @@ struct crtpExternalPositionUpdate
 }  __attribute__((packed));
 CHECKSIZE(crtpExternalPositionUpdate)
 
+// PORT 6 | CHANNEL 3
+// This message will be filtered as 
+// "Localization Service" and "External Distance"
+struct crtpExternalDistanceUpdate {
+  crtpExternalDistanceUpdate(
+      float dist,
+      unsigned char id,
+      float x,
+      float y,
+      float z)
+    : header(0x06, 3)
+      , dist(dist)
+      , id(id)
+      , x(x)
+      , y(y)
+      , z(z)
+  {
+  }
+  const crtp header;
+  float dist;
+  unsigned char id;
+  float x;
+  float y;
+  float z;
+}  __attribute__((packed));
+CHECKSIZE(crtpExternalDistanceUpdate)
+
+
 struct crtpExternalPositionPacked
 {
   crtpExternalPositionPacked()
