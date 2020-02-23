@@ -904,7 +904,7 @@ struct crtpExternalPoseUpdate
     float qy,
     float qz,
     float qw)
-    : header(0x06, 3)
+    : header(0x06, 1)
     , x(x)
     , y(y)
     , z(z)
@@ -929,7 +929,7 @@ CHECKSIZE(crtpExternalPoseUpdate)
 struct crtpExternalPosePacked
 {
   crtpExternalPosePacked()
-    : header(0x06, 3)
+    : header(0x06, 1)
   {
   }
   const crtp header;
