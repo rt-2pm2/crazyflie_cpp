@@ -1193,6 +1193,34 @@ struct crtpCommanderHighLevelDefineTrajectoryRequest
 } __attribute__((packed));
 CHECKSIZE(crtpCommanderHighLevelDefineTrajectoryRequest)
 
+
+
+// Port 9 (LowLevel Setpoint)
+
+struct crtpSetpointLLRequest
+{
+  crtpSetpointLLRequest(
+    uint16_t m0,
+    uint16_t m1,
+    uint16_t m2,
+    uint16_t m3)
+    : header(0x09, 0)
+    , pwm0(m0)
+    , pwm1(m1)
+    , pwm2(m2)
+    , pwm3(m3)
+  {
+  }
+  const crtp header;
+  uint16_t pwm0;
+  uint16_t pwm1;
+  uint16_t pwm2;
+  uint16_t pwm3;
+}  __attribute__((packed));
+CHECKSIZE(crtpSetpointLLRequest)
+
+
+
 // Port 13 (Platform)
 
 struct crtpGetProtocolVersionRequest

@@ -176,6 +176,16 @@ void Crazyflie::sendSetpoint(
   sendPacket(request);
 }
 
+void Crazyflie::sendSetpointLL(
+        uint16_t m0,
+        uint16_t m1,
+        uint16_t m2,
+        uint16_t m3)
+{
+  crtpSetpointLLRequest request(m0, m1, m2, m3);
+  sendPacket(request);
+}
+
 void Crazyflie::sendStop()
 {
   crtpStopRequest request;
