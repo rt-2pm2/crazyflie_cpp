@@ -10,7 +10,9 @@
 #include <set>
 #include <map>
 #include <chrono>
+#include <thread>
 #include <iostream>
+
 
 #define ENABLE_SAFELINK 1
 
@@ -535,6 +537,7 @@ public:
       int i = 0;
       for (auto&& pair : variables) {
         const Crazyflie::LogTocEntry* entry = m_cf->getLogTocEntry(pair.first, pair.second);
+	std::this_thread::sleep_for(std::chrono::milliseconds(10));
         if (entry) {
           request.items[i].logType = entry->type;
           request.items[i].id = entry->id;
@@ -563,6 +566,7 @@ public:
       int i = 0;
       for (auto&& pair : variables) {
         const Crazyflie::LogTocEntry* entry = m_cf->getLogTocEntry(pair.first, pair.second);
+	std::this_thread::sleep_for(std::chrono::milliseconds(10));
         if (entry) {
           request.items[i].logType = entry->type;
           request.items[i].id = entry->id;

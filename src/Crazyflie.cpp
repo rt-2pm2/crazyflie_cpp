@@ -656,8 +656,8 @@ void Crazyflie::requestLogToc(bool forceNoCache)
         entry.type = (LogType)response->type;
         entry.group = std::string(&response->text[0]);
         entry.name = std::string(&response->text[entry.group.size() + 1]);
-        std::cout << "Var <" << entry.group << "." << entry.name <<
-            "> in toc" << std::endl;
+        //std::cout << "Var <" << entry.group << "." << entry.name <<
+        //    "> in toc" << std::endl;
       }
     } else {
       for (size_t i = 0; i < len; ++i) {
