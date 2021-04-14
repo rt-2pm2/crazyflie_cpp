@@ -1189,10 +1189,13 @@ void Crazyflie::handleAck(
     }
   }
   else {
-    crtp* header = (crtp*)result.data;
-    m_logger.warning("Don't know ack: Port: " + std::to_string((int)header->port)
-      + " Channel: " + std::to_string((int)header->channel)
-      + " Len: " + std::to_string((int)result.size));
+    // There is something brocken with the acknoledgments of log messages...
+    // XXX: need to check this.
+
+    //crtp* header = (crtp*)result.data;
+    //m_logger.warning("Don't know ack: Port: " + std::to_string((int)header->port)
+    //  + " Channel: " + std::to_string((int)header->channel)
+    //  + " Len: " + std::to_string((int)result.size));
     // for (size_t i = 1; i < result.size; ++i) {
     //   std::cout << "    " << (int)result.data[i] << std::endl;
     // }

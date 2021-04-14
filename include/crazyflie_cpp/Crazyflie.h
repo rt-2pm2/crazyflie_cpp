@@ -545,8 +545,10 @@ public:
         }
         else {
           std::stringstream sstr;
-          sstr << "Could not find " << pair.first << "." << pair.second << " in log toc!";
-          throw std::runtime_error(sstr.str());
+          std::cout << "WARNING!" << std::endl;
+          std::cout << "Could not find " << pair.first << "." << pair.second << " in log toc!";
+          //sstr << "Could not find " << pair.first << "." << pair.second << " in log toc!";
+          //throw std::runtime_error(sstr.str());
         }
       }
 
